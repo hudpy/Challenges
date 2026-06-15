@@ -4,7 +4,7 @@ print(f"Jumlah elemen = {len(data)}")
 angka=0
 for i in data:
 	angka+=i
-	print(f"Jumlah angka = {angka}")
+print(f"Jumlah angka = {angka}")
 data.sort()
 print(f"terbesar = {data[-1]}")
 print(f"terkecil = {data[0]}")
@@ -12,14 +12,19 @@ print(f"terkecil = {data[0]}")
 #challenge 2
 #membalik list
 angka=[3,4,5,2,1]
-new_angka=[]
-i=len(angka)
-while i>0:
-	x=min(angka)
-	new_angka.append(x)
-	angka.remove(x)
-	i-=1
-print(new_angka)
+temp1=angka[0]
+angka[0]=angka[4]
+angka[4]=temp1
+temp2=angka[1]
+angka[1]=angka[3]
+angka[3]=temp2
+print(angka)
+#more high
+for i in range(2):
+	temp=angka[i]
+	angka[i]=angka[4-i]
+	angka[4-i]=temp
+print(angka)
 
 #challenge 3
 #menghapus duplikat
@@ -90,8 +95,9 @@ print(sum)
 #packing
 a=1,2
 b=3,4
-print(f"a = {b}")
-print(f"b = {a}")
+a,b=b,a
+print(f"a = {a}")
+print(f"b = {b}")
 
 #challenge 9
 #mencari nilai terbesar dalam nested tuple
